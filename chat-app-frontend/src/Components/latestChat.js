@@ -123,9 +123,9 @@ formData.append('userName', user.name);
 navigate('/group')
   }
 
-  const updateGroup = (id)=>{
+  const updateGroup = (grpId)=>{
 
-    navigate('/update-group');
+    navigate(`/update-group/:${grpId}`);
   }
   
   const openChat = (id,name)=>{ 
@@ -172,7 +172,7 @@ selectedChat = groupId;
           //{ user.userId==obj.admin &&  <button onClick={ ()=> updateGroup(obj.id)} >update</button>}
          // console.log("saved user==",user.userId)
           return <>
-            <div style={{margin: '5px', backgroundColor:'gray',padding:'5px'}} key={obj.id}> <span onClick={()=>  openChat(obj.id,obj.name)} > <b> {obj.name}</b> </span>  </div>
+            <div style={{margin: '5px', backgroundColor:'gray',padding:'5px'}} key={obj.id}> <span onClick={()=>  openChat(obj.id,obj.name)} > <b> {obj.name}</b> </span> { user.userId==obj.admin &&  <button onClick={ ()=> updateGroup(obj.id)} >update</button>} </div>
           </>
         })
       }

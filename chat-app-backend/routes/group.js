@@ -6,5 +6,7 @@ const router = express.Router();
 
 router.post("/create",isAuthorized, createGroup);
 router.get("/matched",isAuthorized, retrieveGroup);
+router.get("/get-user",isAuthorized, retrieveGroup);
+router.post("/update",isAuthorized, retrieveGroup);
 
 module.exports = router;

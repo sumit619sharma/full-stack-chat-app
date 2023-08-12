@@ -30,7 +30,7 @@ const Root = () => {
   <Route path='/login' element={<Login/> }/>
    <Route path='/home' element={<LatestChat />} />
    <Route path='/group' element={<CreateGroup />} />
-   <Route path='/update-group' element={<UpdateGroup />} />
+   <Route path='/update-group/:id' element={<UpdateGroup />} />
   {/* <Route path='/forgot' element={<Forgot/> }/> */}
   <Route path='/*' element={<SignUp/> }/>
    </Routes>
