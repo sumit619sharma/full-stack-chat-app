@@ -37,6 +37,7 @@ const LatestChat = () => {
   const lastMsg = messageList.length>0? messageList[messageList.length-1].id: 0;
   //const lastMsg = 0;
   useEffect(()=>{
+    
     socket = io(ENDPOINT); 
     socket.emit('setup', user );
     socket.on('connected', ()=> setSocketConnected(true))
