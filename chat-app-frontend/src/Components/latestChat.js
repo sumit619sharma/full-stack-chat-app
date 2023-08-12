@@ -39,7 +39,7 @@ const LatestChat = () => {
   useEffect(()=>{
     socket = io(ENDPOINT); 
     socket.emit('setup', user );
-    socket.on('connected', ()=> setSocketConnected)
+    socket.on('connected', ()=> setSocketConnected(true))
    },[])
 
   const receiveMessage =async () => {
@@ -125,7 +125,7 @@ navigate('/group')
 
   const updateGroup = (grpId)=>{
 
-    navigate(`/update-group/:${grpId}`);
+    navigate(`/update-group/${grpId}`);
   }
   
   const openChat = (id,name)=>{ 
