@@ -52,9 +52,7 @@ const io = require('socket.io')(server
 io.on('connection', (socket) => {
   console.log('socket connect with client==')
 
-  socket.on('disconnect',() => {
-    console.log('user disconnected');
-  })
+  
 
   socket.on('setup', (user) => {
     socket.join(user.userId);
